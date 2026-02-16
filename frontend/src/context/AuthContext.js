@@ -3,6 +3,8 @@ import axios from 'axios';
 
 const AuthContext = createContext();
 
+const API = process.env.REACT_APP_API_URL;   // ⭐ IMPORTANT
+
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -25,7 +27,7 @@ export const AuthProvider = ({ children }) => {
                     }
                 };
 
-                const res = await axios.get('http://localhost:5001/api/auth/me', config);
+                const res = await axios.get(`${API}/api/auth/me`, config);
 
                 setUser(res.data.data);
                 setIsAuthenticated(true);
@@ -42,7 +44,7 @@ export const AuthProvider = ({ children }) => {
     // Register user
     const register = async (userData) => {
         try {
-            const res = await axios.post('http://localhost:5001/api/auth/register', userData);
+            const res = await axios.post(`${API}/api/auth/register`, userData);
 
             if (res.data.token) {
                 localStorage.setItem('token', res.data.token);
@@ -60,7 +62,7 @@ export const AuthProvider = ({ children }) => {
     // Login user
     const login = async (userData) => {
         try {
-            const res = await axios.post('http://localhost:5001/api/auth/login', userData);
+            const res = await axios.post(`${API}/api/auth/login`, userData);
 
             localStorage.setItem('token', res.data.token);
             setUser(res.data.user);
@@ -79,7 +81,6 @@ export const AuthProvider = ({ children }) => {
         setIsAuthenticated(false);
     };
 
-    // Clear errors
     const clearErrors = () => setError(null);
 
     return (
