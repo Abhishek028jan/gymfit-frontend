@@ -1,0 +1,114 @@
+.class-schedule {
+    background: var(--bg-secondary);
+}
+
+.schedule-header {
+    margin-bottom: 3rem;
+}
+
+/* Day Selector */
+.day-selector {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.day-btn {
+    padding: 0.75rem 1.5rem;
+    background: rgba(26, 26, 26, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.day-btn:hover {
+    border-color: var(--neon-green);
+    color: var(--neon-green);
+    transform: translateY(-2px);
+}
+
+.day-btn.active {
+    background: var(--neon-green);
+    color: #000;
+    border-color: var(--neon-green);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+}
+
+/* Schedule Grid */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.schedule-card {
+    padding: 1.5rem;
+    transition: all var(--transition-normal);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.schedule-card:hover {
+    border-color: rgba(57, 255, 20, 0.3);
+    box-shadow: 0 10px 30px rgba(57, 255, 20, 0.1);
+}
+
+.schedule-time {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--neon-green);
+    margin-bottom: 0.75rem;
+}
+
+.schedule-class {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.schedule-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.schedule-trainer,
+.schedule-duration {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.schedule-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.schedule-spots {
+    color: var(--electric-blue);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .day-selector {
+        gap: 0.5rem;
+    }
+
+    .day-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .schedule-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,33 @@
+.google-map-section {
+    background: var(--bg-secondary);
+}
+
+.map-header {
+    margin-bottom: 3rem;
+}
+
+.map-container-small {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.map-wrapper {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.map-wrapper iframe {
+    display: block;
+    border-radius: var(--radius-lg);
+}
+
+@media (max-width: 768px) {
+    .map-wrapper iframe {
+        height: 250px !important;
+    }
+
+    .map-container-small {
+        max-width: 100%;
+    }
+}

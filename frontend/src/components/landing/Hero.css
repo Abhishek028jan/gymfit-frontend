@@ -1,0 +1,376 @@
+/* ===================================
+   GYMFIT HERO SECTION - CLEAN VERSION
+   =================================== */
+
+/* Hero Section - Full Width, Dark Background */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 0 0 0;
+    overflow: hidden;
+    background: #000000;
+}
+
+/* Background Layer - Premium Multi-Layer Design */
+/* Background Layer - Bold Creative Gradient Mesh */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(57, 255, 20, 0.15) 0%, transparent 40%),
+        radial-gradient(ellipse at 95% 60%, rgba(0, 255, 255, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 70% 85%, rgba(139, 92, 246, 0.08) 0%, transparent 45%),
+        linear-gradient(165deg, #050505 0%, #0f0f0f 30%, #000000 60%, #0a0a0a 100%);
+}
+
+/* Flowing Neon Wave Pattern */
+.hero-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 80% 30%, rgba(57, 255, 20, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 90% 70%, rgba(0, 255, 255, 0.06) 0%, transparent 50%);
+    filter: blur(80px);
+    animation: flowingGlow 10s ease-in-out infinite;
+    z-index: 1;
+}
+
+/* Geometric Accent Lines */
+.hero-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(45deg, transparent 48%, rgba(57, 255, 20, 0.03) 49%, rgba(57, 255, 20, 0.03) 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(0, 255, 255, 0.02) 49%, rgba(0, 255, 255, 0.02) 51%, transparent 52%);
+    background-size: 200px 200px, 250px 250px;
+    background-position: 0 0, 50px 50px;
+    z-index: 1;
+}
+
+@keyframes flowingGlow {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateY(-30px) scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* Dark Gradient Overlay - Full Black Left to Transparent Right */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.9) 25%,
+            rgba(0, 0, 0, 0.6) 50%,
+            rgba(0, 0, 0, 0.3) 70%,
+            transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Hero Athlete Image - Right Side, Full Height */
+.hero-image-wrapper {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    bottom: 0;
+    width: 60%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-athlete-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.85) contrast(1.15);
+}
+
+/* Container - Full Width with Left Padding */
+.hero-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Hero Content - Left Side Text */
+.hero-content {
+    max-width: 700px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Main Headline - Bold, Heavy, Large */
+.hero-headline {
+    font-size: clamp(48px, 7vw, 80px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0 0 32px 0;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+/* White Text - First Line - No Wrapping */
+.headline-white {
+    display: block;
+    color: #ffffff;
+    margin-bottom: 12px;
+    white-space: nowrap;
+}
+
+/* Green to Cyan Gradient - Second Line "BODY & MIND" - Centered/Indented */
+.headline-gradient {
+    display: block;
+    background: linear-gradient(90deg, #39FF14 0%, #0AFFFF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    filter: drop-shadow(0 0 30px rgba(57, 255, 20, 0.5));
+    white-space: nowrap;
+    padding-left: 0px;
+}
+
+/* Subtitle - Gray Text */
+.hero-subtitle {
+    font-size: 19px;
+    line-height: 1.7;
+    color: #b0b0b0;
+    margin: 0 0 48px 0;
+    max-width: 550px;
+}
+
+/* CTA Buttons - Two Buttons Side by Side */
+.hero-cta-buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    padding: 18px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 0.3px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+}
+
+/* Primary Button - Bright Green Filled */
+.hero-btn-primary {
+    background-color: #39FF14;
+    color: #000000;
+    box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+}
+
+.hero-btn-primary:hover {
+    background-color: #45FF20;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 40px rgba(57, 255, 20, 0.6);
+}
+
+/* Secondary Button - Green Outlined/Transparent */
+.hero-btn-secondary {
+    background-color: transparent;
+    color: #39FF14;
+    border: 2px solid #39FF14;
+}
+
+.hero-btn-secondary:hover {
+    background-color: rgba(57, 255, 20, 0.1);
+    border-color: #0AFFFF;
+    color: #0AFFFF;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+}
+
+/* Stats Section - Three Stat Boxes in a Row */
+.hero-stats-row {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.hero-stat-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Stat Numbers - Large, Bold, Colored */
+.stat-number {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+/* Green Color - Active Members */
+.stat-green {
+    color: #39FF14;
+    text-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
+}
+
+/* Cyan Color - Expert Trainers */
+.stat-cyan {
+    color: #0AFFFF;
+    text-shadow: 0 0 25px rgba(10, 255, 255, 0.6);
+}
+
+/* Orange Color - Weekly Classes */
+.stat-orange {
+    color: #FF8C00;
+    text-shadow: 0 0 25px rgba(255, 140, 0, 0.6);
+}
+
+/* Stat Labels - Small, Uppercase */
+.stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #666666;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+/* Tablet */
+@media (max-width: 1200px) {
+    .hero-container {
+        padding: 0 60px;
+    }
+
+    .hero-headline {
+        font-size: clamp(42px, 8vw, 70px);
+    }
+
+    .hero-image-wrapper {
+        width: 55%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 992px) {
+    .hero {
+        padding: 100px 0 60px;
+    }
+
+    .hero-container {
+        padding: 0 32px;
+        min-height: auto;
+    }
+
+    .hero-image-wrapper {
+        width: 100%;
+        opacity: 0.25;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-headline {
+        font-size: clamp(36px, 10vw, 56px);
+        margin-bottom: 24px;
+    }
+
+    .hero-subtitle {
+        font-size: 17px;
+        margin-bottom: 36px;
+    }
+
+    .hero-cta-buttons {
+        margin-bottom: 60px;
+    }
+
+    .hero-btn {
+        padding: 16px 32px;
+        font-size: 15px;
+    }
+
+    .hero-stats-row {
+        gap: 40px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+    .hero-container {
+        padding: 0 24px;
+    }
+
+    .hero-headline {
+        font-size: 32px;
+        letter-spacing: -1px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-cta-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 50px;
+    }
+
+    .hero-btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 24px;
+    }
+
+    .hero-stats-row {
+        gap: 32px;
+    }
+
+    .stat-number {
+        font-size: 32px;
+    }
+}

@@ -1,0 +1,269 @@
+/* =====================================================
+   GYMFIT - Modern Gym Website Styles
+   Clean, Professional Design with Green Accents
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* =====================================================
+   CSS VARIABLES
+   ===================================================== */
+
+:root {
+    /* Primary Green */
+    --primary-green: #7FFF00;
+    --primary-green-hover: #6FEE00;
+    --primary-green-glow: rgba(127, 255, 0, 0.3);
+
+    /* Secondary Colors */
+    --cyan-accent: #00FFE0;
+    --orange-accent: #FF8C42;
+
+    /* Dark Background */
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #151515;
+    --bg-card: rgba(255, 255, 255, 0.05);
+
+    /* Text */
+    --text-primary: #FFFFFF;
+    --text-secondary: #B8B8B8;
+    --text-muted: #6B6B6B;
+
+    /* Borders */
+    --border-color: rgba(255, 255, 255, 0.1);
+
+    /* Shadows */
+    --shadow-primary: 0 8px 32px rgba(127, 255, 0, 0.2);
+    --shadow-dark: 0 4px 16px rgba(0, 0, 0, 0.5);
+
+    /* Transitions */
+    --transition: all 0.3s ease;
+}
+
+/* =====================================================
+   RESET & BASE
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: var(--primary-green);
+    color: var(--bg-primary);
+}
+
+/* =====================================================
+   TYPOGRAPHY
+   ===================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+p {
+    line-height: 1.8;
+    color: var(--text-secondary);
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+/* =====================================================
+   UTILITY CLASSES
+   ===================================================== */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.text-green {
+    color: var(--primary-green);
+}
+
+.text-cyan {
+    color: var(--cyan-accent);
+}
+
+.text-orange {
+    color: var(--orange-accent);
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.btn {
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    text-transform: capitalize;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-login {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-login:hover {
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+}
+
+.btn-primary {
+    background: var(--primary-green);
+    color: #000000;
+    box-shadow: var(--shadow-primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-green-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(127, 255, 0, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--primary-green);
+    color: var(--primary-green);
+}
+
+.btn-secondary:hover {
+    background: rgba(127, 255, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-lg {
+    padding: 18px 48px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 12px;
+}
+
+/* =====================================================
+   GREEN GLOW EFFECTS
+   ===================================================== */
+
+.glow-green {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(127, 255, 0, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(60px);
+}
+
+.glow-1 {
+    top: 10%;
+    right: 10%;
+}
+
+.glow-2 {
+    bottom: 20%;
+    left: 5%;
+    background: radial-gradient(circle, rgba(0, 255, 224, 0.1) 0%, transparent 70%);
+}
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(127, 255, 0, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(127, 255, 0, 0.6);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* =====================================================
+   SCROLLBAR
+   ===================================================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-green-hover);
+}

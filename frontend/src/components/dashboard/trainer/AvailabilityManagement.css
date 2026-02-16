@@ -1,0 +1,324 @@
+.availability-container {
+  padding: 2rem;
+  max-width: 1200px;
+}
+
+.availability-header {
+  margin-bottom: 2rem;
+}
+
+.availability-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(135deg, #39FF14 0%, #0AFFFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.availability-header p {
+  color: #B8B8B8;
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+}
+
+/* Alerts */
+.alert {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.alert-error {
+  background: rgba(255, 59, 59, 0.1);
+  border: 1px solid rgba(255, 59, 59, 0.3);
+  color: #FF3B3B;
+}
+
+.alert-success {
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  color: #00FF88;
+}
+
+/* Grid Layout */
+.availability-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.availability-form-card,
+.availability-schedule-card {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.availability-form-card h2,
+.availability-schedule-card h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem;
+  color: #fff;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #B8B8B8;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Day Selector */
+.day-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.day-btn {
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #B8B8B8;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.day-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.day-btn.active {
+  background: linear-gradient(135deg, #39FF14 0%, #0AFFFF 100%);
+  color: #000;
+  border-color: transparent;
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+}
+
+/* Time Inputs */
+.time-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.time-input {
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.time-input:focus {
+  outline: none;
+  border-color: #39FF14;
+  background: rgba(57, 255, 20, 0.1);
+}
+
+/* Checkbox */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  color: #B8B8B8;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.checkbox-label:hover {
+  color: #fff;
+}
+
+.checkbox-label input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #39FF14;
+}
+
+/* Buttons */
+.form-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #39FF14 0%, #0AFFFF 100%);
+  color: #000;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.5);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #B8B8B8;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* Schedule List */
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.schedule-item {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid #39FF14;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.schedule-day {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.day-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.availability-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.availability-badge.available {
+  background: rgba(0, 255, 136, 0.2);
+  color: #00FF88;
+}
+
+.availability-badge.unavailable {
+  background: rgba(255, 59, 59, 0.2);
+  color: #FF3B3B;
+}
+
+.schedule-time {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.time-badge {
+  padding: 0.5rem 1rem;
+  background: rgba(10, 255, 255, 0.1);
+  border: 1px solid rgba(10, 255, 255, 0.3);
+  color: #0AFFFF;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.duration {
+  color: #B8B8B8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.availability-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(57, 255, 20, 0.3);
+  border-top: 4px solid #39FF14;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .availability-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .day-selector {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .time-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .schedule-time {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

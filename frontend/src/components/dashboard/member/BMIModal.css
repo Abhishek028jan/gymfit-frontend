@@ -1,0 +1,306 @@
+.bmi-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+}
+
+.bmi-modal-content {
+    background-color: #0d0d0d;
+    width: 100%;
+    max-width: 380px;
+    border-radius: 30px;
+    padding: 25px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+    border: 1px solid #333;
+}
+
+.bmi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.bmi-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Gender Selection */
+.gender-selection {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.gender-card {
+    flex: 1;
+    background-color: #1c1c1e;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.gender-card.active {
+    background-color: rgba(203, 253, 80, 0.1);
+    border-color: #cbfd50;
+}
+
+.gender-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.gender-card.active .gender-icon {
+    color: #cbfd50;
+}
+
+.gender-card span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #888;
+}
+
+.gender-card.active span {
+    color: #fff;
+}
+
+/* Height Slider */
+.height-container {
+    background-color: #1c1c1e;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.height-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.height-unit {
+    font-size: 1rem;
+    color: #cbfd50;
+    margin-left: 5px;
+}
+
+.height-slider {
+    width: 100%;
+    margin-top: 15px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: #444;
+    border-radius: 3px;
+    outline: none;
+}
+
+.height-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #cbfd50;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(203, 253, 80, 0.5);
+}
+
+/* Weight and Age Controls */
+.controls-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.control-card {
+    flex: 1;
+    background-color: #1c1c1e;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.control-label {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.control-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.control-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #333;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.control-btn:hover {
+    background-color: #cbfd50;
+    color: #000;
+}
+
+/* Calculate Button */
+.calculate-btn {
+    width: 100%;
+    background-color: #cbfd50;
+    color: #000;
+    border: none;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.calculate-btn:hover {
+    transform: scale(1.02);
+}
+
+/* Result View */
+.result-view {
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.bmi-score {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 20px 0;
+}
+
+.bmi-status {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #cbfd50;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bmi-gauge {
+    height: 8px;
+    background: linear-gradient(90deg, #0AFFFF 0%, #39FF14 50%, #FF6B35 100%);
+    border-radius: 4px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.gauge-marker {
+    position: absolute;
+    top: -5px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    transition: left 1s ease-out;
+}
+
+.diet-tips {
+    text-align: left;
+    background: #1c1c1e;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.diet-tips h4 {
+    color: #cbfd50;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.diet-tips ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.recalculate-btn {
+    width: 100%;
+    background-color: #cbfd50;
+    color: #000;
+    border: none;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
