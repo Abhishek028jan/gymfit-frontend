@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import './TrainerEarnings.css';
@@ -10,11 +10,7 @@ const TrainerEarnings = () => {
   const [loading, setLoading] = useState(true);
   const [period, setPeriod] = useState('month');
 
-  useEffect(() => {
-    fetchEarnings();
-  }, [period]);
-
-  const fetchEarnings = async () => {
+  const fetchEarnings = useCallback(async () => {
     try {
       const token = localStorage.getItem('token');
       const res = await axios.get(`${API}/earnings?period=${period}`, {
@@ -26,7 +22,11 @@ const TrainerEarnings = () => {
       console.error('Error fetching earnings:', err);
       setLoading(false);
     }
-  };
+  }, [period]);
+
+  useEffect(() => {
+    fetchEarnings();
+  }, [fetchEarnings]);
 
   const formatCurrency = (amount) => {
     return `$${parseFloat(amount).toFixed(2)}`;

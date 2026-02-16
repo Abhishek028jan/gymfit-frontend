@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 
@@ -28,15 +28,11 @@ const ManageClasses = () => {
     const [deleteId, setDeleteId] = useState(null);
     const [form, setForm] = useState(emptyForm);
 
-    useEffect(() => {
-        loadAll();
-    }, []);
-
-    const getAuthHeader = () => ({
+    const getAuthHeader = useCallback(() => ({
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-    });
+    }), []);
 
-    const loadAll = async () => {
+    const loadAll = useCallback(async () => {
         try {
             const [classRes, progRes, trainerRes] = await Promise.all([
                 axios.get(`${API}/classes`, getAuthHeader()),
@@ -51,7 +47,11 @@ const ManageClasses = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [getAuthHeader]);
+
+    useEffect(() => {
+        loadAll();
+    }, [loadAll]);
 
     const openAdd = () => {
         setForm(emptyForm);

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -16,15 +16,11 @@ const BookClass = () => {
     const [showConfirmModal, setShowConfirmModal] = useState(false);
     const [showSuccessModal, setShowSuccessModal] = useState(false);
 
-    useEffect(() => {
-        fetchData();
-    }, []);
-
-    const getAuthHeader = () => ({
+    const getAuthHeader = useCallback(() => ({
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-    });
+    }), []);
 
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
         try {
             const [classesRes, bookingsRes] = await Promise.all([
                 axios.get(`${API}/bookings/schedule`, getAuthHeader()),
@@ -38,7 +34,11 @@ const BookClass = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [getAuthHeader]);
+
+    useEffect(() => {
+        fetchData();
+    }, [fetchData]);
 
     const initiateBooking = (cls) => {
         setSelectedClass(cls);

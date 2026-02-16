@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 
@@ -9,6 +9,21 @@ const ManageMembers = () => {
     const [search, setSearch] = useState('');
     const [loading, setLoading] = useState(true);
     const [deleteId, setDeleteId] = useState(null);
+
+    const getAuthHeader = useCallback(() => ({
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    }), []);
+
+    const fetchMembers = useCallback(async () => {
+        try {
+            const res = await axios.get(`${API}/members`, getAuthHeader());
+            setMembers(res.data.data);
+        } catch (err) {
+            console.error('Failed to load members', err);
+        } finally {
+            setLoading(false);
+        }
+    }, [getAuthHeader]);
 
     useEffect(() => {
         fetchMembers();
@@ -23,22 +38,7 @@ const ManageMembers = () => {
 
             return () => socket.disconnect();
         });
-    }, []);
-
-    const getAuthHeader = () => ({
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-    });
-
-    const fetchMembers = async () => {
-        try {
-            const res = await axios.get(`${API}/members`, getAuthHeader());
-            setMembers(res.data.data);
-        } catch (err) {
-            console.error('Failed to load members', err);
-        } finally {
-            setLoading(false);
-        }
-    };
+    }, [fetchMembers]);
 
     const handleDelete = async () => {
         if (!deleteId) return;
