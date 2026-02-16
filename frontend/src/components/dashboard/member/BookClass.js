@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const API = 'http://localhost:5001/api';
+const API = `${process.env.REACT_APP_API_URL}/api`;
 
 const BookClass = () => {
     const [classes, setClasses] = useState([]);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 
-const API = 'http://localhost:5001/api/admin';
+const API = `${process.env.REACT_APP_API_URL}/api/admin`;
 
 const PendingRequests = () => {
     const [requests, setRequests] = useState([]);

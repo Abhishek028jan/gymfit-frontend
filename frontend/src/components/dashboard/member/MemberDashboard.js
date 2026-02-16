@@ -27,7 +27,7 @@ const MemberDashboard = () => {
     const fetchBookings = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get('http://localhost:5001/api/bookings', {
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/bookings`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setUpcomingClasses(res.data.data);

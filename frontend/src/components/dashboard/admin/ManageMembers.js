@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 
-const API = 'http://localhost:5001/api/admin';
+const API = `${process.env.REACT_APP_API_URL}/api/admin`;
 
 const ManageMembers = () => {
     const [members, setMembers] = useState([]);
@@ -30,7 +30,7 @@ const ManageMembers = () => {
 
         // Socket connection
         import('socket.io-client').then(({ io }) => {
-            const socket = io('http://localhost:5001');
+            const socket = io(process.env.REACT_APP_API_URL);
 
             socket.on('newMember', (newMember) => {
                 setMembers(prevMembers => [newMember, ...prevMembers]);

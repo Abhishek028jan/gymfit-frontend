@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 import './TrainerBookings.css';
 
-const API = 'http://localhost:5001/api';
+const API = `${process.env.REACT_APP_API_URL}/api`;
 
 const TrainerBookings = () => {
     const [bookings, setBookings] = useState([]);

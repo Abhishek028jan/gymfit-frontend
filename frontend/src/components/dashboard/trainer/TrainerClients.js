@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 import './TrainerClients.css';
 
-const API = 'http://localhost:5001/api/trainer';
+const API = `${process.env.REACT_APP_API_URL}/api/trainer`;
 
 const TrainerClients = () => {
   const [clients, setClients] = useState([]);
