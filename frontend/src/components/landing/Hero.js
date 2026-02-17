@@ -72,7 +72,7 @@ const Hero = () => {
 
                     <div className="hero-cta-buttons">
                         <Link to="/register" className="hero-btn hero-btn-primary">
-                            Join Now
+                           Claim Your Free Trial
                         </Link>
 
                         <a href="#programs" className="hero-btn hero-btn-secondary">
